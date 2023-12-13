@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltips</title>
+
+    <link rel="stylesheet" href="css/global.min.css">
+    <link rel="stylesheet" href="css/tooltips.attached.min.css">
+
+    <script src="js/tooltips.attached.js"></script>
+</head>
+
+<body>
+    <div class="tooltip" id="tt1">
+        <strong class="is-headline">Tooltip #1</strong>
+        <p>
+            Dieser Tooltip erscheint, sobald sein Parent gehovered wird und verschwindet, sobald er wieder verlassen
+            wird.
+        </p>
+    </div>
+    <div class="tooltip" id="anwendungsbeispiel">
+        <strong class="is-headline">Anwendungsbeispiel</strong>
+
+        <p>
+            Ein Anwendungsbeispiel demonstriert, wie eine Praktik in einer <a href="https://de.wikipedia.org/wiki/Produktivsystem" target="_blank">Produktions-Umgebung</a> aussehen könnte.
+        </p>
+    </div>
+
+    <main>
+        <h1>Tooltips</h1>
+        <p>
+            Tooltips sind eine praktische Sache um Informationen anzuzeigen, die nicht wichtig genug sind um sie direkt
+            anzuzeigen (oder die einfach zu viel wären), aber dennoch nicht unwichtig genug sind um sie direkt auf eine
+            extra Unterseite zu verschieben.
+        </p>
+
+        <div class="flex">
+            <div class="box grid-center" id="hover1">
+                <div style="text-align: center; max-width: 400px;">
+                    Hover hier um Tooltip #1 anzuzeigen.
+                </div>
+            </div>
+            <div class="box grid-center" id="hover2">
+                <div style="text-align: center; max-width: 400px;">
+                    Hover hier um Tooltip #2 anzuzeigen
+                </div>
+            </div>
+        </div>
+
+        <div class="box grid-center" id="hover3">
+            <div style="text-align: center; max-width: 400px;">
+                Klicke hier um Tooltip #3 anzuzeigen.
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <p>Dies ist ein <span id="anw">Anwendungsbeispiel</span> für die Nutzung von Tooltips.</p>
+    </main>
+
+    <script>
+        const tt1 = new Tooltip("hover3", document.getElementById("tt1"), {
+            placement: "bottom center"
+        });
+
+        const tt2 = new Tooltip("anw", document.getElementById("anwendungsbeispiel"), {
+            placement: "bottom center",
+            threshold: 0
+        });
+    </script>
+
+</body>
+
+</html>
